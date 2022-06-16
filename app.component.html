@@ -1,0 +1,47 @@
+ <!-- <p>Hello world</p>
+<div>
+  <label>EMPID</label>
+  <input type ="text" name="empid" [(ngModel)]="empid">
+</div>
+<div>
+  <label>EMPNAME</label>
+  <input type ="text" name="empname" [(ngModel)]="empname">
+</div>
+<div>
+  <label>SALARY</label>
+  <input type ="text" name="salary" [value]="salary">
+</div>
+<button (click)="updateSalary()" >submit</button>
+{{empname}} 
+ 
+
+ -->
+  <button (click)="fetchEmps()">Fetech</button>
+ <table border ="1">
+  <thead>
+<tr>
+  <th>Empid</th>
+  <th>Empname</th>
+  <th>Salary</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of emps">
+      <td>{{emp.empid}}</td>
+      <td>{{emp.empname}}</td>
+      <td>{{emp.salary}}</td>
+      <td><button (click)="deleteEmps(emp.empid)">Delete</button></td>
+    </tr>
+  </tbody>
+</table> 
+<form #myform="ngForm"(submit)="SubmitForm(myform)">
+  <label>EmpId</label>
+  <input type="text" name="empid"ngModel><br>
+  <label>EmpName</label>
+  <input type="text" name="empname"ngModel><br>
+  <label>Salary</label>
+  <input type="text" name="salary"ngModel><br>
+  <input type="submit" value="submit">
+
+
+</form>
